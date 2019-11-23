@@ -8,11 +8,59 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.09e2c710755c8867a460.css"></head>
 
-  <body>
-    <h1>Test</h1>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" async>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.eb3cb63d793579d84c8c.css"></head>
+
+  <body data-spy="scroll" data-offset="40" data-target="#scrollNav">
     <app-root></app-root>
-  <script src="runtime-es2015.edb2fcf2778e7bf1d426.js" type="module"></script><script src="runtime-es5.edb2fcf2778e7bf1d426.js" nomodule defer></script><script src="polyfills-es5.ef4b1e1fc703b3ff76e3.js" nomodule defer></script><script src="polyfills-es2015.2987770fde9daa1d8a2e.js" type="module"></script><script src="main-es2015.be33db11434c361546de.js" type="module"></script><script src="main-es5.be33db11434c361546de.js" nomodule defer></script></body>
+    <script>
+      $(document).ready(function () {
+        const date = new Date();
+        const year = date.getFullYear();
+        $('#copyrightDate').html("Copyright &copy; " + year);
+
+        // Add scrollspy to <body>
+        $('body').scrollspy({
+          target: "#scrollNav",
+          offset: 60
+        });
+
+        // Add smooth scrolling on all links inside the navbar
+        $("#scrollNav a").on('click', function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 500, function () {
+
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+      });
+
+      $('.container .body-content').scrollspy({
+        target: "#scrollNav",
+        offset: 60
+      });
+
+      $('#btnNutshell').click(function () {
+        $('#moreNutshell').toggle(200);
+        //$('#btnNutshell').html('See less');
+      });
+    </script>
+  <script src="runtime-es2015.ca84bb782683800d794b.js" type="module"></script><script src="polyfills-es2015.b93f30bc0ba4b00b07fe.js" type="module"></script><script src="runtime-es5.8f24ffed1c06a6510470.js" nomodule></script><script src="polyfills-es5.4bdf3bafa7365bba2a51.js" nomodule></script><script src="main-es2015.10b2b356307bce0ebca8.js" type="module"></script><script src="main-es5.5448f1e7010f115ab2b5.js" nomodule></script></body>
 
 </html>
