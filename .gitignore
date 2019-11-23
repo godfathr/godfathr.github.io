@@ -1,5 +1,4 @@
 .vscode/
-*.html
 *.txt
 scripts/
 template.*
